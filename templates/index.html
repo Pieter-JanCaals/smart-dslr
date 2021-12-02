@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="widthw=device-width, initial-scale=1" />
+		<link rel="stylesheet" href='/static/css/style.css' />
+		<title>Smart DSLR</title>
+	</head>
+	<body>
+		<label for="date">Select date</label>
+		<input type="date" id="date" value="{{today}}">
+		<button id="load">Load pictures</button>
+		{% if debug %}
+			<button id="copy">Copy pictures</button>
+		{% endif %}
+
+		<div id="pictures"></div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="/static/js/app.js"></script>
+	</body>
+</html>

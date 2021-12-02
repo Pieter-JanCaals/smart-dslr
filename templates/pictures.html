@@ -1,0 +1,13 @@
+{% if not pictures %}
+	<p>No pictures for this day</p>
+{% else %}
+	{% for picture in pictures %}
+		<img src={{ url_for('static', filename=picture.replace(base_path,"pictures")) }} width=100% style="margin-top:25px">
+		<div class="btn-pic-download">
+			<a href="{{ url_for('download_file', filename=picture.replace(base_path, ""))}}" style="margin-bottom:25px">Download</a>	
+		</div>
+	{% endfor %}
+	{% if count <= totalCount %}
+		<button id="load-pagination" data-count="{{count}}">Load more</button>
+	{% endif %}
+{% endif %}
